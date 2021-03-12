@@ -1,0 +1,282 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block body %}
+ <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <h1>PT.Prisindo Utama</h1>
+          <h2>Teknologi Test Covid-19 PCR & Uji Antigen
+              Yang Paling Akurat
+          </h2>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+          <img src="{% static 'images/depann.png' %}" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Cliens Section ======= -->
+    <section id="cliens" class="cliens section-bg">
+      <div class="container">
+
+        <div class="row" data-aos="zoom-in">
+          {% for d8 in data8 %}
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="{{d8.imageSpons}}" class="img-fluid" alt="">
+          </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    </section><!-- End Cliens Section -->
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Tentang</h2>
+          {% for d2 in data2 %}
+            <p>
+              {{d2.text_tentang|safe}}
+            </p>
+            {% endfor %}
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Pelayanan</h2>
+          {% for d6 in data6 %}
+          <p>{{d6.kataBuka|safe}}</p>
+          {% endfor %}
+        </div>
+
+        <div class="row">
+          {% for dt6 in data6 %}
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class='bx bxs-virus-block'></i></div>
+              <h4><a href="">{{dt6.judul}}</a></h4>
+              {{dt6.isi|safe}}
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4><a href="">{{dt6.judul2}}</a></h4>
+              <p>{{dt6.isi2|safe}}</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4><a href="">{{dt6.judul3}}</a></h4>
+              <p>{{dt6.isi3|safe}}</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-layer"></i></div>
+              <h4><a href="">{{dt6.judul4}}</a></h4>
+              <p>{{dt6.isi4|safe}}</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Cta Section ======= -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Gallery</h2>
+          {% for dt1 in data1 %}
+          <p>{{dt1.kataBuka|safe}}</p>
+          {% endfor %}
+        </div>
+
+        <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+          <li data-filter="*" class="filter-active">Semua Galeri</li>
+        </ul>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+          {% for d1 in data1 %}
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-img"><img src="{{d1.imageGmb}}" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Gallery</h4>
+              <p>Foto</p>
+              <a href="{{d1.imageGmb}}" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+              <a href="" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Metode Pembayaran</h2>
+          {% for d7 in data7 %}
+          <p>{{ d7.kataBuka|safe }}</p>
+          {% endfor %}
+        </div>
+
+        <div class="row">
+
+          {% for dt7 in data7 %}
+          <div class="col-lg-6">
+            
+            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
+              <div class="pic"><img src="{{dt7.imageNya}}" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>{{dt7.judul}}</h4>
+                <p>{{dt7.isi|safe}}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+
+    <!-- ======= Pricing Section ======= -->
+    <section id="pricing" class="pricing">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Harga</h2>
+          {% for d3 in data3 %}
+          <p>{{d3.kataBuka|safe}}</p>
+          {% endfor %}
+        </div>
+
+        <div class="row">
+          {% for dt3 in data3 %}
+          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="box featured">
+              <h3>{{dt3.title}}</h3>
+              <h4><sup>Rp.</sup>{{dt3.harga}},-</h4>
+              <ul>
+                <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
+                <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
+                <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
+                <li><i class="bx bx-check"></i> Pharetra massa massa ultricies</li>
+                <li><i class="bx bx-check"></i> Massa ultricies mi quis hendrerit</li>
+              </ul>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    </section><!-- End Pricing Section -->
+
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="faq" class="faq section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Frequently Asked Questions</h2>
+          {% for d4 in data4 %}
+          <p>{{d4.kataBuka|safe}}</p>
+          {% endfor %}
+        </div>
+
+        <div class="faq-list">
+          <ul>
+            {% for dt4 in data4 %}
+            <li data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" class="collapse" href="#faq-list-1">{{dt4.judul|safe}}? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse show" data-parent=".faq-list">
+                <p>
+                  {{dt4.isi|safe}}
+                </p>
+              </div>
+            </li>
+             {% endfor %}
+          </ul>
+        </div>
+
+      </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Kontak Kami</h2>
+          {% for d5 in data5 %}
+          <p>{{d5.kataBuka|safe}}</p>
+          {% endfor %}
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-12 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="icofont-google-map"></i>
+                <h4>Lokasi:</h4>
+                <p>Komplek Bea Cukai Jalan Siak J5 No.14, RT.10/RW.7, Sukapura, <br />
+                  Kec. Cilincing, Kota Jkt Utara, Daerah Khusus Ibukota Jakarta 14140</p>
+              </div>
+
+              <div class="email">
+                <i class="icofont-envelope"></i>
+                <h4>Email:</h4>
+                <p>rsfirdaus@gmail.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="icofont-phone"></i>
+                <h4>Telepon:</h4>
+                <p>+62214407322</p>
+              </div>
+              <div class="whastapp">
+                <i class="icofont-whatsapp"></i>
+                <h4>No.WA:</h4>
+                {% for dt5 in data5 %}
+                <p>{{dt5.nomor_wa}}</p>
+                {% endfor %}
+              </div>
+              <br />
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15867.24110022154!2d106.9231738!3d-6.1561594!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfd850be92e5c0742!2sRS.%20Firdaus!5e0!3m2!1sen!2sid!4v1613635104727!5m2!1sen!2sid" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main>
+{% endblock %}
